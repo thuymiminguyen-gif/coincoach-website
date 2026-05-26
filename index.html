@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoinCoach — Your AI Money Coach</title>
+  <meta name="description" content="Honest financial advice, built for everyone. Track expenses, set goals, and get personalized guidance from your AI money coach. No bank connections, no judgement, no jargon.">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="CoinCoach — Your AI Money Coach">
+  <meta property="og:description" content="Financial advice everyone deserves. Built for my mom — and yours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://coincoach.app">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CoinCoach — Your AI Money Coach">
+  <meta name="twitter:description" content="Financial advice everyone deserves. Built for my mom — and yours.">
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0a0f',
+            ink2: '#13131a',
+            ink3: '#1a1a22',
+            gold: '#c9a84c',
+            'gold-dark': '#a07830',
+            'gold-light': '#e6c870',
+            muted: '#8a8a95',
+            border: '#2a2a35',
+            cream: '#f5f1e8',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e8e6e0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #c9a84c 0%, #a07830 100%);
+    }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #e6c870 0%, #c9a84c 50%, #a07830 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .subtle-grid {
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+    }
+    .quiet-divider {
+      background: linear-gradient(to right, transparent, #c9a84c, transparent);
+      height: 1px;
+    }
+    .glass-card {
+      background: rgba(26, 26, 34, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(160, 120, 48, 0.05));
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    /* Scroll-margin so anchor links don't get hidden under any sticky header */
+    section { scroll-margin-top: 80px; }
+    /* Reduce paint on idle */
+    * { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Top nav -->
+  <nav class="absolute top-0 left-0 right-0 z-10 px-6 md:px-12 py-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg gold-gradient flex items-center justify-center text-ink font-bold text-lg">$</div>
+        <span class="serif text-xl font-bold gold-text-gradient">CoinCoach</span>
+      </a>
+      <a href="#waitlist" class="text-sm text-cream hover:text-gold transition-colors">
+        Join the waitlist →
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="top" class="relative subtle-grid pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs mb-8 font-medium tracking-wide">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+        Launching soon on the App Store
+      </div>
+
+      <h1 class="serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+        Financial advice<br/>
+        <span class="gold-text-gradient">everyone deserves.</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-10">
+        Built for my mom — and yours. An AI money coach that gives honest, personalized advice. No bank connections. No judgement. No jargon.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a href="#waitlist" class="px-8 py-4 rounded-xl gold-gradient text-ink font-semibold hover:opacity-90 transition-opacity">
+          Get early access
+        </a>
+        <a href="#story" class="px-8 py-4 rounded-xl border border-border text-cream font-medium hover:border-gold/50 transition-colors">
+          Read the story
+        </a>
+      </div>
+
+      <p class="text-xs text-muted mt-6">First 100 to download at launch get 30 days of Pro, free.</p>
+    </div>
+  </section>
+
+  <!-- Quiet divider -->
+  <div class="quiet-divider max-w-md mx-auto opacity-40"></div>
+
+  <!-- Founder story -->
+  <section id="story" class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-2xl mx-auto">
+      <p class="serif text-gold text-sm tracking-widest uppercase mb-6 text-center">A note from the founder</p>
+
+      <h2 class="serif text-3xl md:text-4xl font-bold mb-12 text-center leading-tight">
+        I built this for my mom.
+      </h2>
+
+      <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
+        <p>
+          We moved to the US when I was sixteen. My mom worked seven days a week — and still does. She has always managed paycheck to paycheck with a discipline most people don't have. But beyond that? She was on her own.
+        </p>
+
+        <p>
+          A house. Retirement. Whether she could ever afford to stop working. The bigger questions about money never had answers, because the people who get those answers can afford financial advisors. We couldn't.
+        </p>
+
+        <p>
+          I watched her try the apps. Mint. Spreadsheets. The ones that ask you to link your bank account and then show you a wall of charts. None of them told her what to do. They just showed her numbers she already knew, with a feature list that felt designed for someone else.
+        </p>
+
+        <p>
+          What she needed was a friend who understood money. Someone she could ask honestly: <em class="text-gold/90">"Can I afford this? Should I be saving more for retirement? Where is my money going?"</em> Someone who would answer without judgement, in plain language, every time.
+        </p>
+
+        <p>
+          That's why I built CoinCoach.
+        </p>
+
+        <p>
+          It's a simple app — track your expenses and income, set a few goals — but the heart of it is the AI coach. Ask it anything about your finances and it'll answer with the context of your actual data. Not generic advice. Yours.
+        </p>
+
+        <p>
+          My mom can use it. I made sure of that. And if she can, you can.
+        </p>
+
+        <p class="text-cream/70 text-base pt-4">
+          — Thuy<br/>
+          <span class="text-muted text-sm">Founder, CoinCoach</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiet divider -->
+  <div class="quiet-divider max-w-md mx-auto opacity-40"></div>
+
+  <!-- What makes it different -->
+  <section class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="serif text-gold text-sm tracking-widest uppercase mb-4">Why CoinCoach</p>
+        <h2 class="serif text-3xl md:text-5xl font-bold mb-4 leading-tight">A different kind of money app.</h2>
+        <p class="text-muted max-w-2xl mx-auto">Most finance apps show you data. CoinCoach gives you answers.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8">
+          <div class="feature-icon mb-5">💬</div>
+          <h3 class="serif text-xl font-bold mb-3 text-cream">A coach, not a dashboard</h3>
+          <p class="text-muted leading-relaxed">
+            Ask "Can I afford this trip?" or "Should I be saving more?" and get a real answer — grounded in your actual income, expenses, and goals.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8">
+          <div class="feature-icon mb-5">🔒</div>
+          <h3 class="serif text-xl font-bold mb-3 text-cream">Private by design</h3>
+          <p class="text-muted leading-relaxed">
+            No bank connections. We never see your account numbers. Your data is yours, encrypted, never sold. Delete your account and it's gone.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8">
+          <div class="feature-icon mb-5">✨</div>
+          <h3 class="serif text-xl font-bold mb-3 text-cream">Made for real people</h3>
+          <p class="text-muted leading-relaxed">
+            Simple enough for someone who has never used a budgeting app. Powerful enough for freelancers tracking 1099 income and retirement goals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features detail -->
+  <section class="py-24 md:py-32 px-6 md:px-12 bg-ink2/50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="serif text-gold text-sm tracking-widest uppercase mb-4">What's inside</p>
+        <h2 class="serif text-3xl md:text-5xl font-bold mb-4 leading-tight">Everything you need.<br/>Nothing you don't.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-2">
+          <div class="flex items-start gap-4">
+            <div class="text-gold text-xl mt-1">→</div>
+            <div>
+              <h3 class="serif text-lg font-bold mb-1 text-cream">AI Coach with three personalities</h3>
+              <p class="text-muted text-sm leading-relaxed">Choose between Coach (warm), Analyst (direct), or Cheerleader (energetic). Same expertise, different voices.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-4">
+            <div class="text-gold text-xl mt-1">→</div>
+            <div>
+              <h3 class="serif text-lg font-bold mb-1 text-cream">Receipt scanning</h3>
+              <p class="text-muted text-sm leading-relaxed">Snap a photo of any receipt and log the expense in seconds. We extract merchant, amount, date, and category automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-4">
+            <div class="text-gold text-xl mt-1">→</div>
+            <div>
+              <h3 class="serif text-lg font-bold mb-1 text-cream">Personalized insights</h3>
+              <p class="text-muted text-sm leading-relaxed">Get monthly reports that find spending patterns, budget gaps, and opportunities. Then tap any insight to discuss with your coach.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-4">
+            <div class="text-gold text-xl mt-1">→</div>
+            <div>
+              <h3 class="serif text-lg font-bold mb-1 text-cream">Savings goals that work</h3>
+              <p class="text-muted text-sm leading-relaxed">Set goals for an emergency fund, a home, retirement, or anything else. Track progress in plain language.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-4">
+            <div class="text-gold text-xl mt-1">→</div>
+            <div>
+              <h3 class="serif text-lg font-bold mb-1 text-cream">Built for freelance income</h3>
+              <p class="text-muted text-sm leading-relaxed">Track 1099 income separately. Get tax-savings reminders. Understand your real take-home pay across irregular months.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-4">
+            <div class="text-gold text-xl mt-1">→</div>
+            <div>
+              <h3 class="serif text-lg font-bold mb-1 text-cream">Face ID & private storage</h3>
+              <p class="text-muted text-sm leading-relaxed">Biometric lock keeps your financial life private. Data syncs encrypted across your devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="serif text-gold text-sm tracking-widest uppercase mb-4">Honest pricing</p>
+        <h2 class="serif text-3xl md:text-5xl font-bold mb-4 leading-tight">No ads. No upsells.</h2>
+        <p class="text-muted max-w-xl mx-auto">Start with everything free. Upgrade to Pro when you want unlimited coaching and the advanced tools.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Free -->
+        <div class="rounded-2xl p-8 border border-border">
+          <p class="text-muted text-xs tracking-widest uppercase mb-3">Free</p>
+          <p class="serif text-3xl font-bold mb-1 text-cream">$0</p>
+          <p class="text-muted text-sm mb-6">forever</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Unlimited expense & income tracking</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> 25 AI Coach messages per month</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Up to 5 savings goals</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Up to 10 budget categories</li>
+          </ul>
+        </div>
+
+        <!-- Pro -->
+        <div class="rounded-2xl p-8 border border-gold/40 bg-gradient-to-br from-ink2 to-ink3 relative">
+          <div class="absolute -top-3 left-8 px-3 py-1 rounded-full gold-gradient text-ink text-xs font-bold tracking-wide">RECOMMENDED</div>
+          <p class="text-gold text-xs tracking-widest uppercase mb-3">Pro</p>
+          <p class="serif text-3xl font-bold mb-1 text-cream">$4.99<span class="text-base font-normal text-muted">/mo</span></p>
+          <p class="text-muted text-sm mb-6">billed annually at $59.99 · save 37%</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> <strong>Unlimited</strong> AI Coach messages</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Receipt scanning (50/month)</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Detailed reports & PDF exports</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> AI Insights — personalized patterns</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Three coach personalities</li>
+            <li class="flex items-start gap-2 text-cream/90"><span class="text-gold">✓</span> Unlimited goals & categories</li>
+          </ul>
+          <p class="text-xs text-muted mt-6 pt-6 border-t border-border">Or $7.99/month billed monthly · 7-day free trial included</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founding members offer -->
+  <section class="py-24 md:py-32 px-6 md:px-12 bg-ink2/50">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/40 bg-gold/10 text-gold text-xs mb-8 font-medium tracking-wide">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+        Founding member offer
+      </div>
+
+      <h2 class="serif text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        The first 100 get<br/>
+        <span class="gold-text-gradient">30 days of Pro, free.</span>
+      </h2>
+
+      <p class="text-muted text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+        Join the waitlist below. The first 100 people to download CoinCoach when it launches will receive 30 days of Pro at no charge — four times longer than our standard trial. After that, it's our usual 7-day free trial.
+      </p>
+
+      <a href="#waitlist" class="inline-block px-10 py-4 rounded-xl gold-gradient text-ink font-semibold hover:opacity-90 transition-opacity">
+        Reserve your spot
+      </a>
+    </div>
+  </section>
+
+  <!-- Waitlist form -->
+  <section id="waitlist" class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-xl mx-auto">
+      <div class="text-center mb-10">
+        <p class="serif text-gold text-sm tracking-widest uppercase mb-4">Be first</p>
+        <h2 class="serif text-3xl md:text-4xl font-bold mb-4 leading-tight">Join the waitlist.</h2>
+        <p class="text-muted">We'll email you the moment CoinCoach is approved on the App Store. No spam — just the launch announcement and the founder code for 30 days of Pro.</p>
+      </div>
+
+      <!--
+        WAITLIST FORM
+        Replace the action URL with your ConvertKit form action after you create a free account.
+        Instructions:
+        1. Sign up at https://convertkit.com (free up to 1,000 subscribers)
+        2. Create a new form titled "CoinCoach Launch Waitlist"
+        3. In the form's "Embed" tab, copy the form action URL (looks like: https://app.convertkit.com/forms/XXXXXXX/subscriptions)
+        4. Replace the placeholder action URL below
+        5. Optionally, change the input names to match ConvertKit's expected fields
+      -->
+      <form
+        action="https://app.kit.com/forms/9488917/subscriptions"
+        method="post"
+        class="space-y-4"
+      >
+        <div>
+          <label for="email" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email_address"
+            required
+            placeholder="your@email.com"
+            class="w-full px-5 py-4 rounded-xl bg-ink3 border border-border text-cream placeholder-muted focus:border-gold focus:outline-none transition-colors"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-8 py-4 rounded-xl gold-gradient text-ink font-semibold hover:opacity-90 transition-opacity"
+        >
+          Join the waitlist →
+        </button>
+      </form>
+
+      <p class="text-center text-xs text-muted mt-6">
+        We respect your inbox. One launch announcement, that's it. Unsubscribe anytime.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 md:py-32 px-6 md:px-12 bg-ink2/50">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="serif text-gold text-sm tracking-widest uppercase mb-4">Common questions</p>
+        <h2 class="serif text-3xl md:text-4xl font-bold leading-tight">You probably want to know.</h2>
+      </div>
+
+      <div class="space-y-6">
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="serif font-bold text-lg mb-2 text-cream">Do you connect to my bank?</h3>
+          <p class="text-muted text-sm leading-relaxed">No. CoinCoach never asks for or stores your bank credentials. You enter expenses and income manually, or scan receipts. Your bank data stays at your bank.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="serif font-bold text-lg mb-2 text-cream">How does the AI Coach actually work?</h3>
+          <p class="text-muted text-sm leading-relaxed">When you ask a question, we send a summary of your financial data (totals, categories, goals — never your name or email) to a private AI model, which generates a response grounded in your numbers. It's not generic advice. It's yours.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="serif font-bold text-lg mb-2 text-cream">Can I cancel anytime?</h3>
+          <p class="text-muted text-sm leading-relaxed">Yes. Subscriptions cancel through your iPhone Settings. No questions, no friction, no calls.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="serif font-bold text-lg mb-2 text-cream">What happens to my data if I stop using the app?</h3>
+          <p class="text-muted text-sm leading-relaxed">Delete your account inside the app and your data is permanently removed from our servers. No backup, no recovery — gone.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="serif font-bold text-lg mb-2 text-cream">Is this a replacement for a real financial advisor?</h3>
+          <p class="text-muted text-sm leading-relaxed">No. CoinCoach gives educational guidance — not professional financial, tax, or legal advice. For major decisions (mortgages, investments, taxes), we always recommend consulting a licensed professional.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="serif font-bold text-lg mb-2 text-cream">Will there be an Android version?</h3>
+          <p class="text-muted text-sm leading-relaxed">Eventually. We're launching on iOS first to build the product right with a focused audience. If you're an Android user and want updates, join the waitlist — we'll let you know.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 md:py-32 px-6 md:px-12 subtle-grid">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="serif text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        Money advice<br/>
+        <span class="gold-text-gradient">shouldn't be a luxury.</span>
+      </h2>
+      <p class="text-muted text-lg max-w-xl mx-auto leading-relaxed mb-10">
+        We're almost ready to launch. Be one of the first to try CoinCoach — and one of the first 100 to download for 30 days of Pro on us.
+      </p>
+      <a href="#waitlist" class="inline-block px-10 py-4 rounded-xl gold-gradient text-ink font-semibold hover:opacity-90 transition-opacity">
+        Reserve your spot
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 md:px-12 border-t border-border">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center text-ink font-bold">$</div>
+          <span class="serif text-lg font-bold gold-text-gradient">CoinCoach</span>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-sm text-muted">
+          <a href="https://app.coincoach.app/privacy" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <a href="https://app.coincoach.app/terms" class="hover:text-gold transition-colors">Terms of Service</a>
+          <a href="mailto:support@coincoach.app" class="hover:text-gold transition-colors">Contact</a>
+        </div>
+
+        <p class="text-xs text-muted">© 2026 CoinCoach. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
