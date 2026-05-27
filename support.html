@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — CoinCoach</title>
+  <meta name="description" content="Get help with CoinCoach. Contact our support team, browse common questions, and find answers about your account, subscription, and features.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0f;
+      --ink2: #13131a;
+      --ink3: #1a1a22;
+      --gold: #c9a84c;
+      --gold-dark: #a07830;
+      --gold-light: #e6c870;
+      --muted: #8a8a95;
+      --border: #2a2a35;
+      --cream: #f5f1e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #e8e6e0;
+      background: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    nav {
+      padding-bottom: 32px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .brand-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 40px;
+      font-weight: 700;
+      margin: 16px 0 12px;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .section-label {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: var(--cream);
+    }
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--cream);
+    }
+    p, li { color: #d4d2cc; }
+    p { margin: 12px 0; }
+    ul { padding-left: 24px; margin: 12px 0; }
+    li { margin: 6px 0; }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    a:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+    .contact-card {
+      background: rgba(26, 26, 34, 0.6);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0 48px;
+    }
+    .contact-card .email-link {
+      display: inline-block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      margin: 12px 0 4px;
+      padding-bottom: 2px;
+    }
+    .response-time {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .faq-section {
+      margin-top: 56px;
+    }
+    .faq-item {
+      background: rgba(26, 26, 34, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+    .faq-item h3 {
+      margin-bottom: 12px;
+    }
+    .faq-item p, .faq-item li {
+      color: #b8b6b0;
+      font-size: 15px;
+    }
+    .footer-cta {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-cta h2 {
+      margin-bottom: 12px;
+    }
+    .footer-cta p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--ink);
+      text-decoration: none;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.2s;
+    }
+    .button:hover {
+      opacity: 0.9;
+      color: var(--ink);
+      border-color: transparent;
+    }
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a {
+      color: var(--muted);
+      border-bottom: none;
+      margin: 0 12px;
+    }
+    footer a:hover { color: var(--gold); }
+    @media (max-width: 600px) {
+      h1 { font-size: 32px; }
+      .container { padding: 32px 20px 60px; }
+      .contact-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <nav>
+      <a href="/" class="brand">
+        <div class="brand-icon">$</div>
+        <span class="brand-name">CoinCoach</span>
+      </a>
+    </nav>
+
+    <header>
+      <p class="section-label">Support</p>
+      <h1>How can we help?</h1>
+      <p class="subtitle">We're a small team, and your questions matter. Reach out anytime — we read every message.</p>
+    </header>
+
+    <section>
+      <h2>Contact us</h2>
+      <p>For any question, bug report, account issue, or feature request, email us directly:</p>
+
+      <div class="contact-card">
+        <a href="mailto:support@coincoach.app" class="email-link">support@coincoach.app</a>
+        <p class="response-time">We respond within 1–2 business days.</p>
+      </div>
+
+      <p style="color: var(--muted); font-size: 14px;">For privacy-specific inquiries (data requests, account deletion, GDPR), email <a href="mailto:privacy@coincoach.app">privacy@coincoach.app</a>.</p>
+    </section>
+
+    <section class="faq-section">
+      <p class="section-label">Common questions</p>
+      <h2>Frequently asked</h2>
+
+      <div class="faq-item">
+        <h3>How do I cancel my subscription?</h3>
+        <p>Subscriptions are managed by Apple, not by CoinCoach. To cancel:</p>
+        <ul>
+          <li>Open the <strong>Settings</strong> app on your iPhone</li>
+          <li>Tap your <strong>name</strong> at the top → <strong>Subscriptions</strong></li>
+          <li>Find <strong>CoinCoach Pro</strong> and tap it</li>
+          <li>Tap <strong>Cancel Subscription</strong></li>
+        </ul>
+        <p>Your subscription remains active until the end of the current billing period. After that, you'll automatically move to the free tier — your data stays intact.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my account?</h3>
+        <p>You can permanently delete your account directly from within the app:</p>
+        <ul>
+          <li>Open CoinCoach</li>
+          <li>Tap the <strong>Settings</strong> icon (top right)</li>
+          <li>Scroll to the <strong>Danger Zone</strong> section</li>
+          <li>Tap <strong>Delete My Account</strong> and confirm</li>
+        </ul>
+        <p>Account deletion is permanent and immediate. All your financial data, AI Coach conversations, goals, and personal information are removed from our servers and cannot be recovered.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does CoinCoach connect to my bank?</h3>
+        <p>No. CoinCoach never connects to your bank, never asks for your bank credentials, and never sees your account numbers. You enter your expenses and income manually, or scan receipts with your camera. Your banking data stays at your bank.</p>
+        <p>This is intentional. We believe your financial data should stay with you, not be shared with a third-party aggregator.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How does the AI Coach work?</h3>
+        <p>When you ask the AI Coach a question, a summary of your financial data (totals, categories, budgets, and recent transactions) is sent to Anthropic's Claude API to generate a personalized response. Your email address and personal identifiers are <strong>not</strong> sent.</p>
+        <p>The AI is grounded in your actual numbers — not generic advice. It can help you understand your spending, plan for goals, and answer questions about your money.</p>
+        <p>For full technical details, see our <a href="/privacy">Privacy Policy</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What if the AI Coach gives wrong advice?</h3>
+        <p>The AI Coach provides general educational financial guidance. It is <strong>not</strong> professional financial, tax, legal, or investment advice. Like any AI tool, it can occasionally produce inaccurate or outdated information.</p>
+        <p>For decisions involving investments, taxes, mortgages, or other major financial decisions, please consult a licensed professional such as a CPA, fiduciary financial advisor, or attorney.</p>
+        <p>If you notice an error in something the Coach said, we'd love to know — email <a href="mailto:support@coincoach.app">support@coincoach.app</a> and we'll review it.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is my data protected?</h3>
+        <p>Your data is stored on Google Firebase using industry-standard encryption in transit and at rest. Access is restricted by Firebase Security Rules so that only you can read or modify your own data.</p>
+        <p>We never sell your data. We never share it with third parties for marketing. We don't show ads.</p>
+        <p>You can export your data anytime (Dashboard → Export CSV), or permanently delete your account from Settings.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>I'm being charged but the app isn't working — what do I do?</h3>
+        <p>First, try these steps:</p>
+        <ul>
+          <li>Force-quit the app and reopen it</li>
+          <li>Make sure you're signed in to the same account where you purchased</li>
+          <li>In Settings, tap <strong>Restore Purchases</strong></li>
+        </ul>
+        <p>If you're still having trouble, email us at <a href="mailto:support@coincoach.app">support@coincoach.app</a> with your Apple receipt (Apple emails this to you after purchase) and a description of the issue. We respond within 1–2 business days.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I request a refund?</h3>
+        <p>Subscription refunds are handled by Apple, not by CoinCoach. To request a refund:</p>
+        <ul>
+          <li>Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a></li>
+          <li>Sign in with your Apple ID</li>
+          <li>Find your CoinCoach subscription</li>
+          <li>Tap <strong>Report a Problem</strong> and follow the prompts</li>
+        </ul>
+        <p>Apple decides refund eligibility on a case-by-case basis. If they decline, feel free to email us at <a href="mailto:support@coincoach.app">support@coincoach.app</a> — we'll do what we can to help.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Will CoinCoach be available on Android or web?</h3>
+        <p>We're launching on iOS first to build the product carefully with a focused audience. Android and a full web version are on our roadmap, but we don't have a timeline yet.</p>
+        <p>If you'd like to be notified when these become available, join the waitlist on the <a href="/">home page</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is CoinCoach suitable for minors?</h3>
+        <p>CoinCoach is rated 4+ on the App Store, but the financial planning features are designed for adults. We do not knowingly collect data from children under 13. If you believe a child has created an account, please contact <a href="mailto:privacy@coincoach.app">privacy@coincoach.app</a> and we'll delete it.</p>
+      </div>
+
+    </section>
+
+    <div class="footer-cta">
+      <h2>Still have a question?</h2>
+      <p>We're a small team and we read every message. Reach out anytime.</p>
+      <a href="mailto:support@coincoach.app" class="button">Email support</a>
+    </div>
+
+    <footer>
+      <p>
+        <a href="/">← Back to CoinCoach</a> ·
+        <a href="/privacy">Privacy Policy</a> ·
+        <a href="/terms">Terms of Service</a>
+      </p>
+      <p style="margin-top: 12px;">© 2026 CoinCoach. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
